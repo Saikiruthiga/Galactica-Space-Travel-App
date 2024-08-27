@@ -1,0 +1,19 @@
+.logoContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    justify-content: space-between;
+    gap:10px;
+}
+
+.logoItem{
+    flex:25%;
+    box-sizing: border-box;
+    max-width: 25%;
+}
+.logoItem img{
+    display: block;
+    height: auto;
+    width: 75%;
+    
+}
