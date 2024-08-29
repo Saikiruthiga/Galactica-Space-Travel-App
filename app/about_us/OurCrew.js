@@ -1,10 +1,5 @@
 import styles from "./ourCrew.module.css";
 const OurCrew = () => {
-  // TASK - React 1 week 1
-  // Create the "Our Crew section"
-  // Use the descriptions provided in /app/about_us/README.md
-  // Use the pictures from /public/crew
-  // Some inspiration ideas found in /data/inspiration_about_us
   return (
     <div>
       <p>
@@ -14,10 +9,7 @@ const OurCrew = () => {
       </p>
       <div className={styles.imageContainer}>
         <div className={styles.imageItem}>
-          <img
-            src="/crew/image-anousheh-ansari.png"
-            alt="anousheh-ansari_image"
-          ></img>
+          <img src="/crew/image-anousheh-ansari.png"></img>
           <p className={styles.imageDesc}>
             Captain Sarah Vega: A former NASA astronaut with over 15 years of
             experience, Captain Vega leads our missions with unparalleled
@@ -25,10 +17,7 @@ const OurCrew = () => {
           </p>
         </div>
         <div className={styles.imageItem}>
-          <img
-            src="/crew/image-douglas-hurley.png"
-            alt="image-douglas-hurley"
-          ></img>
+          <img src="/crew/image-douglas-hurley.png"></img>
           <p className={styles.imageDesc}>
             Dr. Leo Redding: Our chief astrophysicist, Dr. Redding, is a
             renowned scientist who has contributed to major space discoveries.
@@ -37,10 +26,7 @@ const OurCrew = () => {
           </p>
         </div>
         <div className={styles.imageItem}>
-          <img
-            src="/crew/image-mark-shuttleworth.png"
-            alt="image-mark-shuttleworth"
-          ></img>
+          <img src="/crew/image-mark-shuttleworth.png"></img>
           <p className={styles.imageDesc}>
             Chief Engineer Hana Lee: With her extensive background in aerospace
             engineering, Hana Lee is responsible for the state-of-the-art
@@ -49,10 +35,7 @@ const OurCrew = () => {
           </p>
         </div>
         <div className={styles.imageItem}>
-          <img
-            src="/crew/image-victor-glover.png"
-            alt="image-victor-glover"
-          ></img>
+          <img src="/crew/image-victor-glover.png"></img>
           <p className={styles.imageDesc}>
             Mission Specialist Alex Santos: As a mission specialist, Alex’s job
             is to ensure that every aspect of the journey runs smoothly. With a

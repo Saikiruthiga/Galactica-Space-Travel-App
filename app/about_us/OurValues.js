@@ -3,7 +3,7 @@ const OurValues = () => {
   return (
     <div className={styles.valuesContainer}>
       <div className={styles.valuesItem}>
-        <h2>Exploration:</h2>
+        <h3>Exploration:</h3>
         <p>
           We are driven by a deep-seated desire to explore the unknown. We
           believe that the pursuit of discovery is at the heart of human nature,
@@ -11,7 +11,7 @@ const OurValues = () => {
         </p>
       </div>
       <div className={styles.valuesItem}>
-        <h2>Innovation:</h2>
+        <h3>Innovation:</h3>
         <p>
           At Galactica, we prioritize cutting-edge technology and innovation. We
           are constantly evolving our spacecraft, safety protocols, and services
@@ -20,7 +20,7 @@ const OurValues = () => {
         </p>
       </div>
       <div className={styles.valuesItem}>
-        <h2>Sustainability:</h2>
+        <h3>Sustainability:</h3>
         <p>
           We are committed to making space exploration sustainable for future
           generations. Our space missions are designed to minimize environmental
@@ -29,7 +29,7 @@ const OurValues = () => {
         </p>
       </div>
       <div className={styles.valuesItem}>
-        <h2> Community:</h2>
+        <h3> Community:</h3>
         <p>
           We believe in the power of collective exploration. Our journeys are
           not just about reaching new destinations; they are about building a

@@ -3,17 +3,17 @@
     flex-wrap: wrap;
     margin-top: 35px;
     justify-content: space-between;
-    gap:10px;
+    gap:20px;
 }
 
 .logoItem{
-    flex:25%;
+    flex:calc(20%-20px);
     box-sizing: border-box;
-    max-width: 25%;
+    max-width: calc(20%-20px);
 }
 .logoItem img{
     display: block;
     height: auto;
-    width: 75%;
+    width: 100%;
     
 }

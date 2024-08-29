@@ -4,6 +4,7 @@
     justify-content: space-between; 
     gap: 10px; 
     margin-top:20px;
+    
   }
  
 .imageItem {
@@ -12,7 +13,7 @@
     box-sizing: border-box;
   }
   .imageItem img{
-    width:100%;
+    width:50%;
     height:auto;
     display: block;
     border-radius: 8px;
