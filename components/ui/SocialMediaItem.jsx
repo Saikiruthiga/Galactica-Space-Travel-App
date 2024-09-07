@@ -1,8 +1,9 @@
 const SocialMediaItem=({url,title,icon})=>{
   return(
-    <li><a href={url} title={title} >
+    <li>
+      <a href={url} title={title} >
         <img src={icon}/>
-        </a>
+      </a>
     </li>  );
 }
 export default SocialMediaItem;            

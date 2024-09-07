@@ -8,7 +8,7 @@ const PlanerCard = ({
 }) => {
   return (
     <div className={styles.planetCard}>
-      <img className={styles.planetThumbnail} src={thumbnail} />
+      <img className={styles.planetThumbnail} src={thumbnail} alt="" />
       <div className="planetDescription">
         <h2>
           {name} {isSelected ? "- Selected" : ""}

@@ -38,7 +38,7 @@ export const Navbar = () => {
               title={item.title}
               link={item.link}
               isActive={item.link === currentPath}
-            ></NavItem>
+            />
           ))}
 
           {/* TASK - React 1 week 3 */}

@@ -34,7 +34,7 @@ export const Destinations = () => {
       thumbnail: "/destination/image-titan.png",
     },
   ];
-  const [selectedPlanets, onAddPlanet] = useState([]);
+  const [selectedPlanets, setSelectedPlanets] = useState([]);
 
   let isPlanetSelected = false;
   let numberOfPlanets = 0;
@@ -44,14 +44,10 @@ export const Destinations = () => {
       const filteredPlanets = selectedPlanets.filter(
         (planet) => planet !== name
       );
-      onAddPlanet(filteredPlanets);
+      setSelectedPlanets(filteredPlanets);
     } else {
-      onAddPlanet([...selectedPlanets, name]);
+      setSelectedPlanets([...selectedPlanets, name]);
     }
-
-    console.log(
-      `You seleceted the following planet: ${name}, with the index of ${index}`
-    );
   };
   numberOfPlanets = selectedPlanets.length;
 
@@ -64,9 +60,14 @@ export const Destinations = () => {
           {numberOfPlanets > 0 ? (
             <p>You have {numberOfPlanets} in your wishlist</p>
           ) : (
-            <p>No planets in wishlist :(</p>
+            <p className={styles.iconText}>
+              <img
+                src="https://img.icons8.com/color-pixels/32/shopping-cart.png"
+                alt=""
+              />
+              No planets in wishlist :(
+            </p>
           )}
-          <b>List coming soon after lesson 3!</b>
 
           {/* STOP! - this is for week 3!*/}
           {/* TASK - React 1 week 3 */}

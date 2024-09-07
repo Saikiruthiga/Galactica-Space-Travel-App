@@ -82,3 +82,12 @@
   height: 30px;
   margin-block-end: var(--spacing-20);
 }
+.iconText{
+  display:inline-flex;
+  align-items: center;
+  
+}
+.iconText img{
+  fill:goldenrod;
+  margin-right: 8px;
+}
