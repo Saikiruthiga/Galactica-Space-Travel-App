@@ -6,7 +6,25 @@
 
 
 .nasaPicOfTheDayImg {
-  width: auto;
-  height: 400px;
+ display:flex;
+ flex-direction: column;
+ align-items: center;
 
+}
+.nasaPicOfTheDayImg img {
+  width: auto;
+  height: 40%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.roverPhoto {
+  margin-top: 10px;
+}
+
+.roverPhoto img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
 }
