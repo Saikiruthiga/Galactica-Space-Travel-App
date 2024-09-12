@@ -21,6 +21,7 @@ export const Destinations = () => {
         "Our closest celestial neighbor, the Moon, is a silent witness to Earth's history. With its stunning craters and desolate landscapes, the Moon offers a unique glimpse into space exploration's past and future, making it a perfect destination for lunar adventurers.",
       thumbnail: "/destination/image-moon.png",
     },
+
     {
       name: "Mars",
       description:
@@ -34,22 +35,27 @@ export const Destinations = () => {
       thumbnail: "/destination/image-titan.png",
     },
   ];
-  const [selectedPlanets, setSelectedPlanets] = useState([]);
+  const [wishlist, setWishist] = useState([]);
 
-  let isPlanetSelected = false;
-  let numberOfPlanets = 0;
-
-  const onAddOrRemovePlanet = (name, index) => {
-    if (selectedPlanets.includes(name)) {
-      const filteredPlanets = selectedPlanets.filter(
-        (planet) => planet !== name
-      );
-      setSelectedPlanets(filteredPlanets);
+  const handleAddWishlistItem = (item) => {
+    const isPlanetWishlist = wishlist.some(
+      (planet) => planet.name.toLowerCase() === item.name.toLowerCase()
+    );
+    if (isPlanetWishlist) {
+      setWishist(wishlist.filter((planet) => planet.name !== item.name));
     } else {
-      setSelectedPlanets([...selectedPlanets, name]);
+      setWishist([...wishlist, item]);
     }
   };
-  numberOfPlanets = selectedPlanets.length;
+
+  const removeFromWishlist = (name) => {
+    setWishist(
+      wishlist.filter(
+        (planet) => planet.name.toLowerCase() !== name.toLowerCase()
+      )
+    );
+  };
+  const numberOfPlanets = wishlist.length;
 
   return (
     <div className="fullBGpicture">
@@ -68,44 +74,39 @@ export const Destinations = () => {
               No planets in wishlist :(
             </p>
           )}
-
-          {/* STOP! - this is for week 3!*/}
-          {/* TASK - React 1 week 3 */}
-          {/* Import the AddWishlistItem react component */}
-          {/* <AddWishlistItem /> */}
-          {/* TASK - React 1 week 3 */}
-          {/* Convert the list, so it is using selectedPlanets.map() to display the items  */}
-          {/* Implement the "REMOVE" function */}
-          {/* uncomment the following code snippet: */}
-          {/* 
+          <AddWishlistItem
+            onAddWishlistItem={handleAddWishlistItem}
+            planets={planets}
+          />
           <h3>Your current wishlist</h3>
           <div className={styles.wishlistList}>
-            <PlanetWishlistItem 
-              name="europa"
-              onRemove={() => removeFromWishlist('europa')}
-              thumbnail="/destination/image-europa.png"
-            />
-            <PlanetWishlistItem 
-              name="europa"
-              onRemove={() => removeFromWishlist('europa')}
-              thumbnail="/destination/image-europa.png"
-            />
-          </div> */}
+            {wishlist.map((planet) => (
+              <PlanetWishlistItem
+                key={planet.name}
+                name={planet.name}
+                onRemove={() => removeFromWishlist(planet.name)}
+                thumbnail={planet.thumbnail}
+              />
+            ))}
+          </div>
         </section>
         <section className="card">
           <h2>Possible destinations</h2>
-          {planets.map((planet, index) => (
-            <PlanetCard
-              key={index}
-              name={planet.name}
-              description={planet.description}
-              thumbnail={planet.thumbnail}
-              isSelected={selectedPlanets.includes(planet.name)}
-              onAddOrRemovePlanet={() =>
-                onAddOrRemovePlanet(planet.name, index)
-              }
-            />
-          ))}
+          {planets.map((planet) => {
+            const isSelected = wishlist.some(
+              (wish) => wish.name.toLowerCase() === planet.name.toLowerCase()
+            );
+            return (
+              <PlanetCard
+                key={planet.name}
+                name={planet.name}
+                description={planet.description}
+                thumbnail={planet.thumbnail}
+                isSelected={isSelected}
+                onAddOrRemovePlanet={() => handleAddWishlistItem(planet)}
+              />
+            );
+          })}
         </section>
       </main>
     </div>

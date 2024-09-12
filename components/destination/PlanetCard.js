@@ -1,5 +1,5 @@
 import styles from "@/components/destination/destination.module.css";
-const PlanerCard = ({
+const PlanetCard = ({
   name,
   description,
   thumbnail,
@@ -21,4 +21,4 @@ const PlanerCard = ({
     </div>
   );
 };
-export default PlanerCard;
+export default PlanetCard;
